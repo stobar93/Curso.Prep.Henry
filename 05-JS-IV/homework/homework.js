@@ -60,7 +60,7 @@ function nuevoUsuario(nombre, email, password) {
     nombre: nombre,
     email: email,
     password: password,
-  }
+  };
   return objeto
 
 }
@@ -151,11 +151,10 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto.calcularPrecioDescuento = function(porcentajeDeDescuento){
-    
-    producto.precio = producto.precio - (producto.precio * porcentajeDeDescuento);
-    return producto.precio;
-  }
+
+    producto.calcularPrecioDescuento = function(){
+    return producto.precio * (1-producto.porcentajeDeDescuento);
+    }
   return producto;
 
 }
